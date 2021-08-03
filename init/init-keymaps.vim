@@ -344,8 +344,8 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " 避免ctags自动选择第一个
 nnoremap <c-]> g<c-]>
 " 智能选区选择,默认V拓展选区
-nnoremap V <Plug>(expand_region_expand)
-nnoremap v <Plug>(expand_region_shrink)
+nmap V <Plug>(expand_region_expand)
+nmap v <Plug>(expand_region_shrink)
 " 跨屏跳转
 nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 " 选择窗口
