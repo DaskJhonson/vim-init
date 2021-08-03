@@ -326,8 +326,48 @@ elseif has('win32') || has('win64')
 else
 	noremap <silent><F2> :AsyncRun! -cwd=<root> grep -n -s -R <C-R><C-W> 
 				\ --include='*.h' --include='*.c*' --include='*.py' 
-				\ --include='*.js' --include='*.vim'
+				\ --include='*.js' --include='*.vim
 				\ '<root>' <cr>
 endif
 
-
+if executable('rg')
+	" Use ag over grep
+	"set grepprg=ag\ --nogroup\ --ignore\ tags\ --ignore\ bazel-sgame\ --ignore\ log\ --nocolor
+	set grepprg=rg\ --vimgrep\ -T\ sql\ -T\ log\ --smart-case
+	" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+	"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+	" ag is fast enough that CtrlP doesn't need to cache
+	let g:ctrlp_use_caching = 0
+endif
+" 搜索光标下的单词
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" 避免ctags自动选择第一个
+nnoremap <c-]> g<c-]>
+" 智能选区选择,默认V拓展选区
+nnoremap V <Plug>(expand_region_expand)
+nnoremap v <Plug>(expand_region_shrink)
+" 跨屏跳转
+nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
+" 选择窗口
+nnoremap <C-w><C-w> :ChooseWin<CR>
+" 打开左右窗口进行对比
+nnoremap dv :Gvdiffsplit<CR>
+" 打开搜索框
+nnoremap <Leader>f :LeaderfRgInteractive<CR>
+" 转换水平分割和竖直分割
+" 竖直转水平
+nnoremap <Leader>TT <C-w>t<C-w>K
+" 水平转竖直
+nnoremap <Leader>tt <C-w>t<C-w>H
+" 调整窗口大小
+" 水平大小
+nnoremap <C-w>+ :vertical resize +10<CR>
+nnoremap <C-w>- :vertical resize -10<CR>
+" 竖直大小
+nnoremap <C-w><C-h>+ :resize +10<CR>
+nnoremap <C-w><C-h>- :resize -10<CR>
+" 查看git提交记录
+nnoremap gb :Git blame<CR>
+nnoremap gl :Git log<CR>
+" 删除一行
+nnoremap <C-d><C-d> dd

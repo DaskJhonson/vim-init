@@ -53,7 +53,7 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
 Plug 'chrisbra/vim-diff-enhanced'
 
-
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "----------------------------------------------------------------------
 " Dirvish 设置：自动排序并隐藏文件，同时定位到相关文件
 " 这个排序函数可以将目录排在前面，文件排在后面，并且按照字母顺序排序
@@ -607,5 +607,6 @@ let g:ycm_filetype_whitelist = {
 			\ "zimbu":1,
 			\ "ps1":1,
 			\ }
-
-
+"FZF插件
+Plug 'junegunn/fzf.vim'
+ 
