@@ -347,7 +347,9 @@ nnoremap <c-]> g<c-]>
 nmap V <Plug>(expand_region_expand)
 nmap v <Plug>(expand_region_shrink)
 " 跨屏跳转
-nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
+nmap <Leader>ff <Plug>(easymotion-overwin-f)
+nmap <Leader>ww <Plug>(easymotion-overwin-w)
+nmap <Leader>ll <Plug>(easymotion-overwin-line)
 " 选择窗口
 nnoremap <C-w><C-w> :ChooseWin<CR>
 " 打开左右窗口进行对比
@@ -371,3 +373,7 @@ nnoremap gb :Git blame<CR>
 nnoremap gl :Git log<CR>
 " 删除一行
 nnoremap <C-d><C-d> dd
+" 退出当前窗口
+nnoremap qq :q!<CR>
+" 关闭全部窗口
+nnoremap qa :qa!<CR>
