@@ -609,4 +609,7 @@ let g:ycm_filetype_whitelist = {
 			\ }
 "FZF插件
 Plug 'junegunn/fzf.vim'
- 
+
+Plug 'miyase256/vim-ripgrep',{'branch': 'fix/remove-complete-from-RgRoot'}
+
+
