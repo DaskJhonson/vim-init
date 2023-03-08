@@ -180,4 +180,4 @@ augroup InitFileTypesGroup
 
 augroup END
 
-
+set wrap

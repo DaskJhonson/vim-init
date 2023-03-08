@@ -340,7 +340,7 @@ if executable('rg')
 	let g:ctrlp_use_caching = 0
 endif
 " 搜索光标下的单词
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " 避免ctags自动选择第一个
 nnoremap <c-]> g<c-]>
 " 智能选区选择,默认V拓展选区
@@ -377,3 +377,7 @@ nnoremap <C-d><C-d> dd
 nnoremap qq :q!<CR>
 " 关闭全部窗口
 nnoremap qa :qa!<CR>
+" 快速模糊搜索
+nnoremap <C-e> :FZF<CR>
+" 打开目录
+nnoremap <C-d> :NERDTree<CR>
